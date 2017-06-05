@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('partials/head') %>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+        <main>
+            <div id="container">
+                <%- include('partials/chart') %>
+                <section>
+                    <p id="sentiment-blurb" style="display: none">
+                        In the past <span id="time_delta"></span>, <span id="tweet_count"></span>
+                        tweets have been analyzed. The average sentiment 
+                        was <span id="avg_polarity"></span>%, with a high of 
+                        <span id="high_polarity"></span>% and a low of 
+                        <span id="low_polarity"></span>%.
+                    </p>
+                    <nav>
+                        <button data-chart-delta="30" class="button">Past 30 Days</button>
+                        <button data-chart-delta="7" class="button">Past 7 Days</button>
+                        <button data-chart-delta="1" class="button">Past 24 Hours</button>
+                    </nav>
+                </section>
+            </div>
+        </main>
+        <script src="js/bundle.js"></script>
+        <script type="text/javascript">
+            var visualization = new window.polarity.SentimentViz();
+        </script>
+    </body>
+</html>

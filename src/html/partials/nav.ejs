@@ -1,0 +1,17 @@
+<% var views = { 
+    index: {route: '/', label: 'Past 30 Days'},
+    weekly: {route: '/weekly.html', label: 'Past 7 Days'},
+    daily: {route: '/daily.html', label: 'Past 24 Hours'},
+    about: {route: '/about.html', label: 'About'}
+}%>
+
+<nav>
+<% for (var view in views) {%>
+    <% var className = '' %>
+    <%if (view == active) className='active' %>
+
+    <a href="<%= views[view].route%>" id="switch-<%= view %>" class="<%= className %>">
+        <%= views[view].label %>
+    </a>
+<% } %>
+</nav>

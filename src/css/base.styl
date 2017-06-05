@@ -1,0 +1,71 @@
+body
+    background $backgroundColor
+    color $fontColor
+    line-height 1.6
+    font-size 1rem
+    font-family 'Roboto', sans-serif
+
+header
+    height 64px
+    padding 0 16px
+    box-sizing border-box
+    background $primaryColor
+    box-shadow $boxShadow
+    
+    a
+        text-decoration none
+        
+        h1
+            font-size 32px
+            color $contentColor
+            line-height 64px
+            margin 0
+            font-weight 300
+
+    +tablet()
+        text-align center
+        padding 0
+
+main
+    padding 32px
+    box-sizing border-box
+    
+#container
+    background $contentColor
+    box-shadow $boxShadow
+    margin 0 auto
+    width 100%
+    height auto
+    max-width 1200px
+    padding 32px
+    box-sizing border-box
+
+nav
+    margin-top 16px
+    padding-top 24px
+    border-top 1px solid $fontColor
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    
+    button
+        height 40px
+        line-height 40px
+        vertical-align middle
+        border 1px solid $contentColor
+        color $contentColor
+        border-radius 3px
+        flex-basis 20%
+        text-align center
+        background $primaryColor
+        
+        &.active-button
+            text-decoration underline
+
+        +tablet()
+            flex-basis 40%
+            margin-bottom 8px
+        
+        +mobile()
+            flex-basis 80%
+

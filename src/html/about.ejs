@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('partials/head') %>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+        <main>
+            <div id="container">
+                <section id="technologies">
+                    <h3>About Presidential Polarity</h3>
+                    <p>
+                        Presidential Polarity stared as a little side project exploring
+                        Twitter data mining. I felt that analyzing tweet sentiment was
+                        a reasonable barometer for public opinion.
+                    </p>
+                    <p>
+                        Keep in mind, I am not statistician or researcher. I am merely
+                        a developer working on a side project. This is not intended
+                        to be a source of truth or citable resource.
+                    </p>
+                </section>
+                <section id="technologies">
+                    <h3>Technologies</h3>
+                    <p>
+                        The project is built around a homegrown Twitter sentiment platform,
+                        available on <a href="https://github.com/dkrichards86/twitter-sentiment" target="_blank">GitHub</a>.
+                    </p>
+                    <p>
+                        The first phase is tweet collection. Tweets are collected from
+                        Twitter's tweet stream. We use <a href="http://www.tweepy.org/" target="_blank">Tweepy</a>
+                        to help us collect tweets. We filter the stream for English
+                        tweets containg the keyword <em>Trump</em>. We do not remove
+                        retweets or quotes, because we feel they still reflect the
+                        sentiment of the user.
+                    </p>
+                    <p>
+                        Every 15 minutes, we process a batch of tweets. We use 
+                        <a href="http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf" target="_blank">VADER sentiment analysis</a>
+                        as implemented in the <a href="http://www.nltk.org/" target="_blank">NLTK</a>
+                        library. The results of analysis are then written to a database. We do
+                        not store any tweets or user data, just stats.
+                    </p>
+                    <p>
+                        Those stats are served by a 
+                        <a href="http://flask.pocoo.org/" target="_blank">Flask</a>
+                        API.
+                    </p>
+                    <p>
+                        We use <a href="https://d3js.org/" target="_blank">D3</a> to build the visualizations.
+                    </p>
+                </section>
+                <%- include('partials/nav', {active: 'about'}) %>
+            </div>
+        </main>
+    </body>
+</html>

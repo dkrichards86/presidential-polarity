@@ -1,0 +1,41 @@
+#anchor
+    position relative
+
+    canvas
+        display block
+        width 100%
+        visibility hidden
+    
+    svg
+        position absolute
+        width 100%
+        top 0
+        left 0
+    
+    text
+        color $fontColor
+    
+    .domain
+        stroke $fontColor
+
+    .line
+        fill none
+        stroke $primaryColor
+        stroke-width 2px
+
+    .midline
+        fill none
+        stroke $fontColor
+
+    .avgline
+        fill none
+        stroke #B71C1C
+        stroke-dasharray 3, 3
+        stroke-width 1.5px
+    
+    .tick
+        stroke-dasharray 1, 4
+    
+    .focus circle
+        fill $primaryColor
+        stroke $primaryColor
