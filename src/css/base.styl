@@ -12,15 +12,12 @@ header
     background $primaryColor
     box-shadow $boxShadow
     
-    a
-        text-decoration none
-        
-        h1
-            font-size 32px
-            color $contentColor
-            line-height 64px
-            margin 0
-            font-weight 300
+    h1
+        font-size 32px
+        color $contentColor
+        line-height 64px
+        margin 0
+        font-weight 300
 
     +tablet()
         text-align center
@@ -40,10 +37,15 @@ main
     padding 32px
     box-sizing border-box
 
+#sentiment-blurb
+    text-align center
+    padding 8px 0
+    font-weight 700
+
 nav
-    margin-top 16px
-    padding-top 24px
-    border-top 1px solid $fontColor
+    margin 16px 0
+    padding-bottom 16px
+    border-bottom 1px solid $fontColor
     display flex
     justify-content space-around
     flex-wrap wrap

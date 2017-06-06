@@ -1,10 +1,13 @@
 var gulp = require('gulp');
+
 var rollup = require('rollup');
 var babel = require("rollup-plugin-babel");
 var resolve = require('rollup-plugin-node-resolve');
 var multiEntry = require('rollup-plugin-multi-entry');
+var uglify = require('rollup-plugin-uglify');
 
 var ejs = require('gulp-ejs');
+
 var stylus = require('gulp-stylus');
 
 gulp.task('bundle', function () {
@@ -21,7 +24,8 @@ gulp.task('bundle', function () {
                 ],
                 babelrc: false,
                 exclude: 'node_modules/**'
-            })
+            }),
+            uglify()
         ]
     })
     .then(function (bundle) {
@@ -42,7 +46,9 @@ gulp.task('ejs', function() {
 
 gulp.task('stylus', function () {
     return gulp.src('./src/css/main.styl')
-        .pipe(stylus())
+        .pipe(stylus({
+            compress: true
+        }))
         .pipe(gulp.dest('./public/css'));
 });
 
